@@ -16,5 +16,7 @@ namespace GroupProject.GUI
         {
             InitializeComponent();
         }
+
+        // note: kiểm tra nhập dữ liệu trên text box 
     }
 }
