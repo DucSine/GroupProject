@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GroupProject.DAL
 {
-    class DAL_Login
+    class DAL_Account
     {
-        DAL_Access access = new DAL_Access();
+        DAL_GeneralAccess access = new DAL_GeneralAccess();
 
         public bool CheckLogin(string[] account)
         {

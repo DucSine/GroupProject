@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace GroupProject.DAL
 {
-    class DAL_Access
+    class DAL_GeneralAccess
     {
         bool check = false;
 
-        public DAL_Access()
+        public DAL_GeneralAccess()
         {
             //Constructor
         }

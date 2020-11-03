@@ -9,7 +9,7 @@ namespace GroupProject.DAL
 {
     class DAL_KindOfGoods
     {
-        DAL_Access access = new DAL_Access();
+        DAL_GeneralAccess access = new DAL_GeneralAccess();
 
         string sql;
 

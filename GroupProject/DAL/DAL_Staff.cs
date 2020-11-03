@@ -9,7 +9,7 @@ namespace GroupProject.DAL
 {
     class DAL_Staff
     {
-        DAL_Access access = new DAL_Access();
+        DAL_GeneralAccess access = new DAL_GeneralAccess();
         
         string sql;
 
@@ -47,7 +47,7 @@ namespace GroupProject.DAL
                                     "st_Adress = N'{6}', " +
                                     "st_Local = N'{7}', " +
                                     "st_Salary = {8} ) " +
-                                    "WHERE st_ID = {0} ",
+                                    "WHERE st_ID = '{0}' ",
                                 st_id, st_name, st_image, st_sex, st_bDay, st_phone, st_adress, st_local, st_salary);
 
             return access.executeUpdate(sql);
