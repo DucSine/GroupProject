@@ -64,6 +64,7 @@
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
     <Compile Include="DAL\DAL_Access.cs" />
+    <Compile Include="DAL\DAL_KindOfGoods.cs" />
     <Compile Include="DAL\DAL_Login.cs" />
     <Compile Include="DAL\DAL_Staff.cs" />
     <Compile Include="GUI\frm_Login.cs">
