@@ -17,20 +17,20 @@ namespace GroupProject.DAL
             //Constructor
         }
 
-        private SqlConnection GetConnection()
+        internal SqlConnection GetConnection()
         {
             //Get connection
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Task\PC_SoftWare\Winform\Sine_GroupProject\Sine_GroupProject\BakeryManagerSystem.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Task\PC_SoftWare\Winform\GroupProject\GroupProject\BakeryManagement.mdf;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
 
-        private void OpenConnection(SqlConnection conn)
+        internal void OpenConnection(SqlConnection conn)
         {
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
         }
 
-        private void CloseConnection(SqlConnection conn)
+        internal void CloseConnection(SqlConnection conn)
         {
             if (conn.State == ConnectionState.Open)
                 conn.Close();

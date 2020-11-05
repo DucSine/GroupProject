@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[Account] (
     PRIMARY KEY CLUSTERED ([Acc_Username] ASC)
 );
 CREATE TABLE [dbo].[Staff] (
-    [st_ID]     NVARCHAR (15)  NOT NULL,
+    [st_ID]     NVARCHAR (50)  NOT NULL,
     [st_Name]   NVARCHAR (50)  NOT NULL,
     [st_Image]  NVARCHAR (50)  NOT NULL,
     [st_Sex]    BIT            NOT NULL,
@@ -42,10 +42,8 @@ CREATE TABLE [dbo].[Goods] (
 );
 CREATE TABLE [dbo].[Bill] (
     [b_ID]        NVARCHAR (50) NOT NULL,
-    [st_ID]       NVARCHAR (15) NOT NULL,
     [b_TimeOrder] DATETIME      NOT NULL,
-    PRIMARY KEY CLUSTERED ([b_ID] ASC),
-    FOREIGN KEY ([st_ID]) REFERENCES [dbo].[Staff] ([st_ID])
+    PRIMARY KEY CLUSTERED ([b_ID] ASC)
 );
 CREATE TABLE [dbo].[BillDetail] (
     [b_ID]        NVARCHAR (50) NOT NULL,
@@ -56,6 +54,245 @@ CREATE TABLE [dbo].[BillDetail] (
     FOREIGN KEY ([b_ID]) REFERENCES [dbo].[Bill] ([b_ID]),
     FOREIGN KEY ([g_ID]) REFERENCES [dbo].[Goods] ([g_ID])
 );
+
+-------------------------------------------------------------------------------------------------------
+GO
+create proc spCheckLogin
+@Acc_Username nvarchar(15),
+@Acc_Password nvarchar(15)
+as
+begin 
+	select * from Account where Acc_Username = @Acc_Username and Acc_Password = @Acc_Password
+end
+
+GO
+create proc spGetStaff
+as
+begin
+	select * from Staff
+end
+GO
+
+create proc spAddStaff
+@st_ID NVARCHAR(50),
+@st_Name   NVARCHAR (50),
+@st_Image  NVARCHAR (50),
+@st_Sex    BIT,
+@st_Bday  DATETIME,
+@st_Phone  NVARCHAR (15),
+@st_Adress NVARCHAR (100),
+@st_Local  NVARCHAR (30),
+@st_Salary FLOAT
+as
+begin
+	insert into Staff
+	values(@st_ID, @st_Name , @st_Image, @st_Sex ,@st_Bday, @st_Phone, @st_Adress, @st_Local, @st_Salary)
+end
+
+GO
+create proc spUpdateStaff
+@st_ID NVARCHAR(50),
+@st_Name   NVARCHAR (50),
+@st_Image  NVARCHAR (50),
+@st_Sex    BIT,
+@st_Bday  DATETIME,
+@st_Phone  NVARCHAR (15),
+@st_Adress NVARCHAR (100),
+@st_Local  NVARCHAR (30),
+@st_Salary FLOAT
+as
+begin
+	Update Staff
+	set st_Name = @st_Name,
+		st_Image = @st_Image,
+		st_Sex = @st_Sex,
+		st_Bday = @st_Bday, 
+		st_Phone = @st_Phone,
+		st_Adress = @st_Adress,
+		st_Local = @st_Local,
+		st_Salary = @st_Salary
+	where st_ID = @st_ID
+
+end
+
+GO
+create proc spDeleteStaff
+@st_ID NVARCHAR(50)
+as 
+begin
+	DELETE FROM Staff
+	WHERE st_ID = @st_ID
+end
+
+GO
+create proc spGetKindOfGoods
+as
+begin
+	select * from KindOfGoods
+end
+
+GO
+create proc spAddKindOfGoods
+@kog_ID   NVARCHAR (15),
+@kog_Name NVARCHAR (30)
+as
+begin
+    insert into KindOfGoods
+	values(@kog_ID, @kog_Name)
+end
+
+GO
+create proc spUpdateKindOfGoods
+@kog_ID   NVARCHAR (15),
+@kog_Name NVARCHAR (30)
+as
+begin 
+    Update KindOfGoods
+	set kog_Name = @kog_Name
+    where kog_ID = @kog_ID 
+end
+
+GO
+create proc spDeleteKindOfGoods
+@kog_ID   NVARCHAR (15)
+as
+begin 
+    Delete from Goods
+    where kog_ID = @kog_ID
+    ----------------------
+    Delete from KindOfGoods
+    where kog_ID = @kog_ID
+end
+
+GO
+create proc spGetGoods
+as
+begin
+	select * from Goods
+end
+GO
+GO
+create proc spAddGoods
+@g_ID         NVARCHAR (15),
+@kog_ID       NVARCHAR (15),
+@g_Name       NVARCHAR (30),
+@g_Image      NVARCHAR (50),
+@g_Caption    NVARCHAR (20),
+@g_DateImport DATETIME,
+@g_Amount     INT,
+@g_Unit       NVARCHAR (20),
+@g_Cost       FLOAT,
+@g_Price      FLOAT
+as
+begin 
+    Insert into Goods 
+    values (@g_ID, @kog_ID, @g_Name, @g_Image, @g_Caption, @g_DateImport, @g_Amount, @g_Unit, @g_Cost, @g_Price )
+end
+
+GO
+create proc spUpdateGoods
+@g_ID         NVARCHAR (15),
+@kog_ID       NVARCHAR (15),
+@g_Name       NVARCHAR (30),
+@g_Image      NVARCHAR (50),
+@g_Caption    NVARCHAR (20),
+@g_DateImport DATETIME,
+@g_Amount     INT,
+@g_Unit       NVARCHAR (20),
+@g_Cost       FLOAT,
+@g_Price      FLOAT
+as
+begin 
+    Update Goods
+    set kog_ID = @kog_ID,
+        g_Name = @g_Name,
+        g_Image = @g_Image,
+        g_Caption = @g_Caption,
+        g_DateImport = @g_DateImport,
+        g_Amount = @g_Amount,
+        g_Unit = @g_Unit,
+        g_Cost = @g_Cost,
+        g_Price = @g_Price
+    where g_ID = @g_ID
+end
+
+GO
+create proc spDeleteGoods
+@g_ID         NVARCHAR (15)
+as
+begin 
+    delete from Goods
+    where g_ID = @g_ID
+end
+
+GO
+create proc spFindStaff
+@st_Name nvarchar(50)
+as
+begin
+select * from Staff
+where st_Name like @st_Name  
+end
+
+GO
+create proc spFindKindOfGoods
+@kog_ID nvarchar(50)
+as
+begin
+select * from KindOfGoods
+where kog_ID = @kog_ID  
+end
+
+GO
+create proc spFindGoods
+@g_ID nvarchar(50)
+as
+begin
+select * from Goods
+where g_ID = @g_ID  
+end
+
+GO
+create proc spGetBillOut
+as
+begin
+	select b.b_ID, b.b_TimeOrder, sum(bd_Amount * g_Price) as tt_Price
+	from Bill b, BillDetail bd, Goods g
+	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Cost = 0
+	group by b.b_ID, b.b_TimeOrder
+end
+
+Go
+create proc spGetBillIn
+as
+begin
+	select b.b_ID, b.b_TimeOrder, sum(bd_Amount * g_Cost) as tt_Price
+	from Bill b, BillDetail bd, Goods g
+	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Price =0
+	group by b.b_ID, b.b_TimeOrder
+end
+
+GO
+create proc spGetBillDetailIn
+@b_ID nvarchar(50)
+as
+begin
+	select b.b_ID, b_TimeOrder, g_Name, bd_Amount, g_Unit ,(bd_Amount * g_Cost) as Cost
+	from Bill b, BillDetail bd, Goods g
+	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Price = 0 and b.b_ID = @b_ID
+end
+
+GO
+create proc spGetBillDetailOut
+@b_ID nvarchar(50)
+as
+begin
+	select b.b_ID, b_TimeOrder, g_Name, bd_Amount, g_Unit ,(bd_Amount * g_Price) as Cost
+	from Bill b, BillDetail bd, Goods g
+	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Cost = 0 and b.b_ID = @b_ID
+end
+GO
+--
 
 INSERT INTO [dbo].[Account] ([Acc_Username], [Acc_Password]) VALUES (N'Admin', N'duc123')
 INSERT INTO [dbo].[Staff] ([st_ID], [st_Name], [st_Image], [st_Sex], [st_Bday], [st_Phone], [st_Adress], [st_Local], [st_Salary]) VALUES (N'sv001', N'Đức', N'avatar.png', 1, N'1997-10-23 00:00:00', N'0311451512', N'Quảng Trị', N'Nhân viên bán hàng', 500)

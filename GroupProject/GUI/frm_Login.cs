@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GroupProject.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace GroupProject.GUI
         public frm_Login()
         {
             InitializeComponent();
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            DAL_Account acc = new DAL_Account();
+            if (acc.CheckLogin(txt_Username.Text, txt_Password.Text))
+                MessageBox.Show("True");
+            else
+                MessageBox.Show("False");
         }
 
         // note: kiểm tra nhập dữ liệu trên text box 

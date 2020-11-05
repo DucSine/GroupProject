@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,52 +11,93 @@ namespace GroupProject.DAL
     class DAL_KindOfGoods
     {
         DAL_GeneralAccess access = new DAL_GeneralAccess();
+        IDataReader reader;
+        SqlCommand cmd;
+        DataTable dataTable;
+        int row;
+        bool check;
 
-        string sql;
-
-        public DataTable LoadKindOfGoodsTable()
+        public DataTable LoadKindOfGoods()
         {
-            sql = "SELECT * FROM KindOfGoods";
-            return access.executeQuery(sql);
+            dataTable = new DataTable();
+            new SqlDataAdapter("spGetKindOfGoods", access.GetConnection()).Fill(dataTable);
+
+            return dataTable;
         }
 
-        public DataTable SearchKindOfGoodsByNane(string kog_Name)
+        public int AddKindOfGoods(string kog_Id, string kog_Name)
         {
-            sql = string.Format("SELECT * FROM KindOfGoods " +
-                                "WHERE st_Name = N'{0}' ",
-                                kog_Name);
-            return access.executeQuery(sql);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spAddKindOfGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Id));
+                cmd.Parameters.Add(new SqlParameter("@kog_Name", kog_Name));
+                row = cmd.ExecuteNonQuery();
+                access.CloseConnection(conn);
+            }
+
+            return row;
         }
 
-        public int AddKindOfGoods(string kog_id, string kog_name )
+        public bool UpdateKindOfGoods(string kog_Id, string kog_Name)
         {
-            sql = string.Format("INSERT INTO KindOfGoods " +
-                                "VALUES ( '{0}', N'{1}')",
-                                kog_id, kog_name );
 
-            return access.executeUpdate(sql);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spUpdateKindOfGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Id));
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Name));
+                check = cmd.ExecuteNonQuery() == 1 ? true : false;
+                access.CloseConnection(conn);
+            }
+
+            return check;
         }
 
-        public int UpdateKindOfGoods(string kog_id, string kog_name)
+        public bool DellKindOfGoods(string kog_Id)
         {
-            sql = string.Format("UPDATE KindOfGoods " +
-                                "SET kog_Name =  N'{1}', " +
-                                    "WHERE kog_ID = {0} ",
-                                kog_id, kog_name);
 
-            return access.executeUpdate(sql);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spDellKindOfGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Id));
+                check = cmd.ExecuteNonQuery() == 1 ? true : false;
+                access.CloseConnection(conn);
+            }
+
+            return check;
         }
 
-        public int DeleteKindOfGoods(string kog_id)
+        public DataTable SearchKindOfGoods(string kog_Id)
         {
-            string sub_sql = string.Format("DELETE FROM Goods " +
-                                           "wHERE kog_ID = {0}", kog_id);
-            access.executeUpdate(sub_sql);
+            dataTable = new DataTable();
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spFindKindOfGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Id));
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                    dataTable.Load(reader);
+                access.CloseConnection(conn);
+            }
 
-            sql = string.Format("DELETE FROM KindOfGoods " +
-                                "wHERE kog_ID = {0}", kog_id);
-
-            return access.executeUpdate(sql);
+            return dataTable;
         }
     }
 }

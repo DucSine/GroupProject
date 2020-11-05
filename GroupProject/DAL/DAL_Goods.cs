@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,56 +11,114 @@ namespace GroupProject.DAL
     class DAL_Goods
     {
         DAL_GeneralAccess access = new DAL_GeneralAccess();
-
+        IDataReader reader;
+        SqlCommand cmd;
+        DataTable dataTable;
+        int row;
+        bool check;
         string sql;
 
-        public DataTable LoadStaffTable()
+        public DataTable LoadGoods()
         {
-            sql = "SELECT * FROM Goods";
-            return access.executeQuery(sql);
-        }
+            dataTable = new DataTable();
+            new SqlDataAdapter("spGetGoods", access.GetConnection()).Fill(dataTable);
 
-        public DataTable SearchStaffByName(string g_name)
-        {
-            sql = string.Format("SELECT * FROM Goods " +
-                                "WHERE st_Name = N'{0}' ",
-                                g_name);
-            return access.executeQuery(sql);
+            return dataTable;
         }
 
         public int AddGoods(string g_id, string kog_id, string g_name, string g_image, string g_caption, string g_dateImport, int g_amount, string g_unit, float g_cost, float g_price)
         {
-            sql = string.Format("INSERT INTO Goods " +
-                                "VALUES ( '{0}', '{1}', N'{2}', N'{3}', N'{4}', '{5}', {6}, N'{7}', {8}, {9})",
-                                g_id, kog_id, g_name, g_image, g_caption, g_dateImport, g_amount, g_unit, g_cost, g_price);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spAddGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@g_ID", g_id));
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_id));
+                cmd.Parameters.Add(new SqlParameter("@g_Name", g_name));
+                cmd.Parameters.Add(new SqlParameter("@g_Image", g_image));
+                cmd.Parameters.Add(new SqlParameter("@g_Caption", g_caption));
+                cmd.Parameters.Add(new SqlParameter("@g_DateImport", g_dateImport));
+                cmd.Parameters.Add(new SqlParameter("@g_Amount", g_amount));
+                cmd.Parameters.Add(new SqlParameter("@g_Unit", g_unit));
+                cmd.Parameters.Add(new SqlParameter("@g_Cost", g_cost));
+                cmd.Parameters.Add(new SqlParameter("@g_Price", g_price));
+                row = cmd.ExecuteNonQuery();
+                access.CloseConnection(conn);
+            }
 
-            return access.executeUpdate(sql);
+            return row;
         }
 
-        public int UpdateGoods(string st_id, string st_name, string st_image, bool st_sex, string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
+        public int UpdateGoods(string g_id, string kog_id, string g_name, string g_image, string g_caption, string g_dateImport, int g_amount, string g_unit, float g_cost, float g_price)
         {
-            sql = string.Format("UPDATE Goods " +
-                                "SET kog_ID = '{1}' " +
-                                    "g_Name =  N'{2}', " +
-                                    "g_Image = N'{3}', " +
-                                    "g_Caption = N'{4}', " +
-                                    "g_DateImport = '{5}', " +
-                                    "g_Amount = {6}, " +
-                                    "g_Unit = N'{7}', " +
-                                    "g_Cost = {8}, " +
-                                    "g_Price = {9} ) " +
-                                    "WHERE g_ID = '{0}' ",
-                                st_id, st_name, st_image, st_sex, st_bDay, st_phone, st_adress, st_local, st_salary);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spUpdateGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@g_ID", g_id));
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_id));
+                cmd.Parameters.Add(new SqlParameter("@g_Name", g_name));
+                cmd.Parameters.Add(new SqlParameter("@g_Image", g_image));
+                cmd.Parameters.Add(new SqlParameter("@g_Caption", g_caption));
+                cmd.Parameters.Add(new SqlParameter("@g_DateImport", g_dateImport));
+                cmd.Parameters.Add(new SqlParameter("@g_Amount", g_amount));
+                cmd.Parameters.Add(new SqlParameter("@g_Unit", g_unit));
+                cmd.Parameters.Add(new SqlParameter("@g_Cost", g_cost));
+                cmd.Parameters.Add(new SqlParameter("@g_Price", g_price));
+                row = cmd.ExecuteNonQuery();
+                access.CloseConnection(conn);
+            }
 
-            return access.executeUpdate(sql);
+            return row;
         }
 
-        public int DeleteGoods(string g_id)
+        public bool DellGoods(string g_Id)
         {
-            sql = string.Format("DELETE FROM Goods " +
-                                "wHERE g_ID = {0}", g_id);
 
-            return access.executeUpdate(sql);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spDellGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@g_ID", g_Id));
+                check = cmd.ExecuteNonQuery() == 1 ? true : false;
+                access.CloseConnection(conn);
+            }
+
+            return check;
         }
+
+        public DataTable SearchGoods(string g_ID)
+        {
+            dataTable = new DataTable();
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spFindGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@g_ID", g_ID));
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                    dataTable.Load(reader);
+                access.CloseConnection(conn);
+            }
+
+            return dataTable;
+        }
+
+
+
+
+
     }
 }
