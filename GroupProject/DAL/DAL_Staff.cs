@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,55 +11,106 @@ namespace GroupProject.DAL
     class DAL_Staff
     {
         DAL_GeneralAccess access = new DAL_GeneralAccess();
-        
+        IDataReader reader;
+        SqlCommand cmd;
+        DataTable dataTable;
+        int row;
+        bool check;
         string sql;
 
         public DataTable LoadStaffTable()
         {
-            sql = "SELECT * FROM Staff";
-            return access.executeQuery(sql);
-        }
+            dataTable = new DataTable();
+            new SqlDataAdapter("spGetStaff", access.GetConnection()).Fill(dataTable);
 
-        public DataTable SearchStaffByName(string st_name)
-        {
-            sql = string.Format("SELECT * FROM Staff " +
-                                "WHERE st_Name = N'{0}' ",
-                                st_name);
-            return access.executeQuery(sql);
+            return dataTable;
         }
 
         public int AddStaff(string st_id, string st_name, string st_image,bool st_sex , string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
         {
-            sql = string.Format("INSERT INTO Staff " +
-                                "VALUES ( '{0}', N'{1}', N'{2}', {3}, '{4}', '{5}', N'{6}', N'{7}', {8} )",
-                                st_id, st_name, st_image, st_sex, st_bDay, st_phone, st_adress, st_local, st_salary);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spAddStaff", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@st_ID", st_id));
+                cmd.Parameters.Add(new SqlParameter("@st_Name", st_name));
+                cmd.Parameters.Add(new SqlParameter("@st_Image", st_image));
+                cmd.Parameters.Add(new SqlParameter("@st_Sex", st_sex));
+                cmd.Parameters.Add(new SqlParameter("@st_Bday", st_bDay));
+                cmd.Parameters.Add(new SqlParameter("@st_Phone", st_phone));
+                cmd.Parameters.Add(new SqlParameter("@st_Adress", st_adress));
+                cmd.Parameters.Add(new SqlParameter("@st_Local", st_local));
+                cmd.Parameters.Add(new SqlParameter("@st_Salary", st_salary));
+                row = cmd.ExecuteNonQuery();
+                access.CloseConnection(conn);
+            }
 
-            return access.executeUpdate(sql);
+            return row;
         }
 
         public int UpdateStaff(string st_id, string st_name, string st_image, bool st_sex, string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
         {
-            sql = string.Format("UPDATE Staff " +
-                                "SET st_Name =  N'{1}', " +
-                                    "st_Image = N'{2}', " +
-                                    "st_Sex = {3}, " +
-                                    "st_Bday = '{4}', " +
-                                    "st_Phone = '{5}', " +
-                                    "st_Adress = N'{6}', " +
-                                    "st_Local = N'{7}', " +
-                                    "st_Salary = {8} ) " +
-                                    "WHERE st_ID = '{0}' ",
-                                st_id, st_name, st_image, st_sex, st_bDay, st_phone, st_adress, st_local, st_salary);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spUpdateStaff", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@st_ID", st_id));
+                cmd.Parameters.Add(new SqlParameter("@st_Name", st_name));
+                cmd.Parameters.Add(new SqlParameter("@st_Image", st_image));
+                cmd.Parameters.Add(new SqlParameter("@st_Sex", st_sex));
+                cmd.Parameters.Add(new SqlParameter("@st_Bday", st_bDay));
+                cmd.Parameters.Add(new SqlParameter("@st_Phone", st_phone));
+                cmd.Parameters.Add(new SqlParameter("@st_Adress", st_adress));
+                cmd.Parameters.Add(new SqlParameter("@st_Local", st_local));
+                cmd.Parameters.Add(new SqlParameter("@st_Salary", st_salary));
+                row = cmd.ExecuteNonQuery();
+                access.CloseConnection(conn);
+            }
 
-            return access.executeUpdate(sql);
+            return row;
         }
 
-        public int DeleteStaff (string st_id)
+        public bool DeleteStaff (string st_id)
         {
-            sql = string.Format("DELETE FROM Staff " +
-                                "wHERE st_ID = {0}", st_id);
-            
-            return access.executeUpdate(sql);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spDeleteStaff", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@st_ID", st_id));
+                check = cmd.ExecuteNonQuery() == 1 ? true : false;
+                access.CloseConnection(conn);
+            }
+
+            return check;
+        }
+        //
+        public DataTable SearchStaffByName(string st_name)
+        {
+            dataTable = new DataTable();
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spFindStaff", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@st_Name", st_name));
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                    dataTable.Load(reader);
+                access.CloseConnection(conn);
+            }
+
+            return dataTable;
         }
     }
 }

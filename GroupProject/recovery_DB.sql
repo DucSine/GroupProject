@@ -236,20 +236,20 @@ end
 
 GO
 create proc spFindKindOfGoods
-@kog_ID nvarchar(50)
+@kog_Name nvarchar(50)
 as
 begin
 select * from KindOfGoods
-where kog_ID = @kog_ID  
+where kog_Name = @kog_Name  
 end
 
 GO
 create proc spFindGoods
-@g_ID nvarchar(50)
+@g_Name nvarchar(50)
 as
 begin
 select * from Goods
-where g_ID = @g_ID  
+where g_Name like @g_Name  
 end
 
 GO

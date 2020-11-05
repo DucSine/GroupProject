@@ -16,7 +16,6 @@ namespace GroupProject.DAL
         DataTable dataTable;
         int row;
         bool check;
-        string sql;
 
         public DataTable LoadGoods()
         {
@@ -84,7 +83,7 @@ namespace GroupProject.DAL
             using (SqlConnection conn = access.GetConnection())
             {
                 access.OpenConnection(conn);
-                cmd = new SqlCommand("spDellGoods", conn)
+                cmd = new SqlCommand("spDeleteGoods", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -96,7 +95,7 @@ namespace GroupProject.DAL
             return check;
         }
 
-        public DataTable SearchGoods(string g_ID)
+        public DataTable SearchGoods(string g_Name)
         {
             dataTable = new DataTable();
             using (SqlConnection conn = access.GetConnection())
@@ -106,7 +105,7 @@ namespace GroupProject.DAL
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.Add(new SqlParameter("@g_ID", g_ID));
+                cmd.Parameters.Add(new SqlParameter("@g_Name", g_Name));
                 reader = cmd.ExecuteReader();
                 if (reader != null)
                     dataTable.Load(reader);
@@ -115,10 +114,5 @@ namespace GroupProject.DAL
 
             return dataTable;
         }
-
-
-
-
-
     }
 }

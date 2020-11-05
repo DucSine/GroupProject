@@ -68,7 +68,7 @@ namespace GroupProject.DAL
             using (SqlConnection conn = access.GetConnection())
             {
                 access.OpenConnection(conn);
-                cmd = new SqlCommand("spDellKindOfGoods", conn)
+                cmd = new SqlCommand("spDeleteKindOfGoods", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -80,7 +80,7 @@ namespace GroupProject.DAL
             return check;
         }
 
-        public DataTable SearchKindOfGoods(string kog_Id)
+        public DataTable SearchKindOfGoods(string kog_Name)
         {
             dataTable = new DataTable();
             using (SqlConnection conn = access.GetConnection())
@@ -90,7 +90,7 @@ namespace GroupProject.DAL
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_Id));
+                cmd.Parameters.Add(new SqlParameter("@kog_Name", kog_Name));
                 reader = cmd.ExecuteReader();
                 if (reader != null)
                     dataTable.Load(reader);
