@@ -1,8 +1,29 @@
 ﻿-- Group Project
 Member: Hoàng Võ Như Đức - 232 112 0865 - email: duchoangvo97@gmail.com
 
+
+Member : Phạm Tiến Nam - 2321125100 - email: namphamt1999@gmail.com
+
+	- Nội dung làm đc:
+		+ BLL
+			1. BLL_login
+			2. BLL_Staff
+			3. BLL_Goods
+		+ edit GUI
+			1. GUI_Staff
+			2. GUI_Goods
+	- Nội dung chưa làm đc:
+		+BLL
+			1. chưa đổ được dữ liệu ra listview.
+		
+	-note: làm xong phần DAL_Bill nhớ merge !!!!!!!!!!
+
 --Tài liệu hướng dẫn:
 	Nếu database không hoạt động:
 		Tạo mới database với tên BakeryManagement, kết nối.
 		Mở và chạy file recovery_DB.sql.
 		Sửa lại chuỗi kết nối ở DAL_Access.
+
+
+
+

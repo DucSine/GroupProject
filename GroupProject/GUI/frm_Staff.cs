@@ -9,13 +9,11 @@ using System.Windows.Forms;
 
 namespace GroupProject.GUI
 {
-    public partial class frm_Main : Form
+    public partial class frm_Staff : Form
     {
-        public frm_Main()
+        public frm_Staff()
         {
             InitializeComponent();
         }
-
-       
     }
 }

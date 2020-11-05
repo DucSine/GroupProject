@@ -66,7 +66,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BakeryManagerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BLL\BLL_Bill.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_Goods.cs" />
+    <Compile Include="BLL\BLL_Main.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
     <Compile Include="DAL\DAL_BillDetail.cs" />
     <Compile Include="DAL\DAL_Bill.cs" />
@@ -75,6 +78,12 @@
     <Compile Include="DAL\DAL_KindOfGoods.cs" />
     <Compile Include="DAL\DAL_Account.cs" />
     <Compile Include="DAL\DAL_Staff.cs" />
+    <Compile Include="GUI\frm_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_Bill.Designer.cs">
+      <DependentUpon>frm_Bill.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,13 +96,34 @@
     <Compile Include="GUI\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frm_Goods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_Goods.Designer.cs">
+      <DependentUpon>frm_Goods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_Staff.Designer.cs">
+      <DependentUpon>frm_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frm_Bill.resx">
+      <DependentUpon>frm_Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_Goods.resx">
+      <DependentUpon>frm_Goods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_Staff.resx">
+      <DependentUpon>frm_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

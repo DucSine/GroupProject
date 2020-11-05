@@ -13,7 +13,7 @@ namespace GroupProject.DAL
 
         string sql;
 
-        public DataTable LoadStaffTable()
+        public DataTable LoadGoodTable()
         {
             sql = "SELECT * FROM Goods";
             return access.executeQuery(sql);
@@ -36,7 +36,7 @@ namespace GroupProject.DAL
             return access.executeUpdate(sql);
         }
 
-        public int UpdateGoods(string st_id, string st_name, string st_image, bool st_sex, string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
+        public int UpdateGoods( string kog_id, string g_name, string g_image, string g_caption, string g_dateImport, int g_amount, string g_unit, float g_cost, float g_price)
         {
             sql = string.Format("UPDATE Goods " +
                                 "SET kog_ID = '{1}' " +
@@ -49,7 +49,7 @@ namespace GroupProject.DAL
                                     "g_Cost = {8}, " +
                                     "g_Price = {9} ) " +
                                     "WHERE g_ID = '{0}' ",
-                                st_id, st_name, st_image, st_sex, st_bDay, st_phone, st_adress, st_local, st_salary);
+                                kog_id, g_name, g_image, g_caption, g_dateImport, g_amount, g_unit, g_cost, g_price);
 
             return access.executeUpdate(sql);
         }

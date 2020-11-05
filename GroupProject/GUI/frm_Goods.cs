@@ -9,13 +9,23 @@ using System.Windows.Forms;
 
 namespace GroupProject.GUI
 {
-    public partial class frm_Main : Form
+    public partial class frm_Goods : Form
     {
-        public frm_Main()
+        public frm_Goods()
         {
             InitializeComponent();
         }
 
-       
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }
