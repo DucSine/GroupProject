@@ -147,13 +147,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="BakeryManager.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BakeryManager_log.ldf">
-      <DependentUpon>BakeryManager.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\avatar.png" />
     <Content Include="Project_Document.txt" />
     <Content Include="recovery_DB.sql" />
