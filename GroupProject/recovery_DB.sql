@@ -273,23 +273,15 @@ begin
 end
 
 GO
-create proc spGetBillDetailIn
+create proc spGetBillDetail
 @b_ID nvarchar(50)
 as
 begin
-	select b.b_ID, b_TimeOrder, g_Name, bd_Amount, g_Unit ,(bd_Amount * g_Cost) as Cost
+	select b.b_ID, b_TimeOrder, g_Name, bd_Amount, g_Unit ,(case when g_Cost <>0  then (bd_Amount * g_Cost)
+																 when g_Price <> 0  then (bd_Amount * g_Price)
+																 End ) as tt_Pay
 	from Bill b, BillDetail bd, Goods g
-	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Price = 0 and b.b_ID = @b_ID
-end
-
-GO
-create proc spGetBillDetailOut
-@b_ID nvarchar(50)
-as
-begin
-	select b.b_ID, b_TimeOrder, g_Name, bd_Amount, g_Unit ,(bd_Amount * g_Price) as Cost
-	from Bill b, BillDetail bd, Goods g
-	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and g_Cost = 0 and b.b_ID = @b_ID
+	where b.b_ID = bd.b_ID and bd.g_ID = g.g_ID and b.b_ID = @b_ID
 end
 GO
 --
