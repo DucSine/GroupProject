@@ -63,7 +63,6 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
-    <Compile Include="DAL\DAL_BillDetail.cs" />
     <Compile Include="DAL\DAL_Bill.cs" />
     <Compile Include="DAL\DAL_Goods.cs" />
     <Compile Include="DAL\DAL_GeneralAccess.cs" />

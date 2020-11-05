@@ -16,7 +16,6 @@ namespace GroupProject.DAL
         DataTable dataTable;
         int row;
         bool check;
-        string sql;
 
         public DataTable LoadStaffTable()
         {
