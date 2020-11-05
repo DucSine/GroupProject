@@ -10,9 +10,9 @@ namespace GroupProject.DAL
     {
         DAL_GeneralAccess access = new DAL_GeneralAccess();
 
-        public bool CheckLogin(string[] account)
+        public bool CheckLogin(string username, string password)
         {
-            string sql = string.Format("SELECT * FROM Account WHERE Acc_Username = '{0}' and Acc_Password = '{1}'", account);
+            string sql = string.Format("SELECT * FROM Account WHERE Acc_Username = '{0}' and Acc_Password = '{1}'", username, password);
             return access.executeCheck(sql);
         }
     }

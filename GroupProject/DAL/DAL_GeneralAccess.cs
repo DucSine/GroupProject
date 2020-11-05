@@ -20,7 +20,7 @@ namespace GroupProject.DAL
         private SqlConnection GetConnection()
         {
             //Get connection
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Task\PC_SoftWare\Winform\Sine_GroupProject\Sine_GroupProject\BakeryManagerSystem.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\Doing\Winform\GroupProject\GroupProject\BakeryManager.mdf;Integrated Security=True;User Instance=True";
             return new SqlConnection(connectionString);
         }
 

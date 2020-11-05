@@ -140,6 +140,7 @@
             this.btn_Login.TabIndex = 3;
             this.btn_Login.Text = "Đăng Nhập";
             this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // txt_Username
             // 
@@ -190,11 +191,11 @@
         private System.Windows.Forms.Label lb_RegxUsername;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox txt_Password;
+        public System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btn_Login;
-        private System.Windows.Forms.TextBox txt_Username;
+        public System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
