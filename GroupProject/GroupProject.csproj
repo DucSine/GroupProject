@@ -158,7 +158,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Images\avatar.png" />
     <Content Include="BakeryManagement.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -166,6 +165,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BakeryManagement.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\avatar.png" />
     <Content Include="Project_Document.txt" />
     <Content Include="recovery_DB.sql" />
   </ItemGroup>
