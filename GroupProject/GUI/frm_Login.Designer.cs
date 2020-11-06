@@ -32,7 +32,7 @@
             this.lb_RegxPassword = new System.Windows.Forms.Label();
             this.lb_RegxUsername = new System.Windows.Forms.Label();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linklb_FogotPassword = new System.Windows.Forms.LinkLabel();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -48,7 +48,7 @@
             this.panel1.Controls.Add(this.lb_RegxPassword);
             this.panel1.Controls.Add(this.lb_RegxUsername);
             this.panel1.Controls.Add(this.btn_Exit);
-            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.linklb_FogotPassword);
             this.panel1.Controls.Add(this.txt_Password);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.checkBox1);
@@ -91,15 +91,15 @@
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
+            // linklb_FogotPassword
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(268, 213);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 13);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Quên mật khẩu?";
+            this.linklb_FogotPassword.AutoSize = true;
+            this.linklb_FogotPassword.Location = new System.Drawing.Point(268, 213);
+            this.linklb_FogotPassword.Name = "linklb_FogotPassword";
+            this.linklb_FogotPassword.Size = new System.Drawing.Size(86, 13);
+            this.linklb_FogotPassword.TabIndex = 7;
+            this.linklb_FogotPassword.TabStop = true;
+            this.linklb_FogotPassword.Text = "Quên mật khẩu?";
             // 
             // txt_Password
             // 
@@ -140,7 +140,6 @@
             this.btn_Login.TabIndex = 3;
             this.btn_Login.Text = "Đăng Nhập";
             this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // txt_Username
             // 
@@ -190,13 +189,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_RegxPassword;
         private System.Windows.Forms.Label lb_RegxUsername;
-        private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox txt_Password;
+        public System.Windows.Forms.Button btn_Exit;
+        public System.Windows.Forms.LinkLabel linklb_FogotPassword;
+        public System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btn_Login;
-        private System.Windows.Forms.TextBox txt_Username;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.Button btn_Login;
+        public System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

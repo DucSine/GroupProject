@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GroupProject.BLL;
 
 namespace GroupProject.GUI
 {
@@ -16,17 +17,10 @@ namespace GroupProject.GUI
         public frm_Login()
         {
             InitializeComponent();
+            BLL_Login bll_Login =   new BLL_Login(this);
+            btn_Login.Click += new EventHandler(bll_Login.Btn_Click);
+            btn_Exit.Click += new EventHandler(bll_Login.Btn_Click);
         }
 
-        private void btn_Login_Click(object sender, EventArgs e)
-        {
-            DAL_Account acc = new DAL_Account();
-            if (acc.CheckLogin(txt_Username.Text, txt_Password.Text))
-                MessageBox.Show("True");
-            else
-                MessageBox.Show("False");
-        }
-
-        // note: kiểm tra nhập dữ liệu trên text box 
     }
 }
