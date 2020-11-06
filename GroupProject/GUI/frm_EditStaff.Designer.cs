@@ -30,6 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pb_Avatar = new System.Windows.Forms.PictureBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Commit = new System.Windows.Forms.Button();
+            this.cb_Local = new System.Windows.Forms.ComboBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,20 +51,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_Commit = new System.Windows.Forms.Button();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pb_Avatar = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Avatar)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,10 +70,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btn_Cancel);
             this.panel2.Controls.Add(this.btn_Commit);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cb_Local);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
@@ -90,6 +92,86 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 519);
             this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pb_Avatar);
+            this.panel3.Location = new System.Drawing.Point(460, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(143, 142);
+            this.panel3.TabIndex = 16;
+            // 
+            // pb_Avatar
+            // 
+            this.pb_Avatar.Location = new System.Drawing.Point(0, 0);
+            this.pb_Avatar.Name = "pb_Avatar";
+            this.pb_Avatar.Size = new System.Drawing.Size(143, 142);
+            this.pb_Avatar.TabIndex = 0;
+            this.pb_Avatar.TabStop = false;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.Location = new System.Drawing.Point(416, 458);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(103, 34);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Hủy bỏ";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // btn_Commit
+            // 
+            this.btn_Commit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Commit.Location = new System.Drawing.Point(127, 458);
+            this.btn_Commit.Name = "btn_Commit";
+            this.btn_Commit.Size = new System.Drawing.Size(111, 34);
+            this.btn_Commit.TabIndex = 14;
+            this.btn_Commit.Text = "Xác nhận";
+            this.btn_Commit.UseVisualStyleBackColor = true;
+            // 
+            // cb_Local
+            // 
+            this.cb_Local.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Local.FormattingEnabled = true;
+            this.cb_Local.Items.AddRange(new object[] {
+            "Nhân viên bán hàng",
+            "Nhân viên quản lý"});
+            this.cb_Local.Location = new System.Drawing.Point(157, 340);
+            this.cb_Local.Name = "cb_Local";
+            this.cb_Local.Size = new System.Drawing.Size(196, 24);
+            this.cb_Local.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(157, 388);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(196, 22);
+            this.textBox4.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(157, 288);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(196, 22);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(157, 231);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 22);
+            this.textBox2.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(157, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 22);
+            this.textBox1.TabIndex = 9;
             // 
             // label9
             // 
@@ -215,82 +297,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin nhân viên";
             // 
-            // textBox1
+            // dateTimePicker1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 22);
-            this.textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(157, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 22);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(157, 288);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 22);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(157, 388);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 22);
-            this.textBox4.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 340);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 24);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // btn_Commit
-            // 
-            this.btn_Commit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Commit.Location = new System.Drawing.Point(127, 458);
-            this.btn_Commit.Name = "btn_Commit";
-            this.btn_Commit.Size = new System.Drawing.Size(111, 34);
-            this.btn_Commit.TabIndex = 14;
-            this.btn_Commit.Text = "Xác nhận";
-            this.btn_Commit.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(416, 458);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(103, 34);
-            this.btn_Cancel.TabIndex = 15;
-            this.btn_Cancel.Text = "Hủy bỏ";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pb_Avatar);
-            this.panel3.Location = new System.Drawing.Point(460, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(143, 142);
-            this.panel3.TabIndex = 16;
-            // 
-            // pb_Avatar
-            // 
-            this.pb_Avatar.Location = new System.Drawing.Point(0, 0);
-            this.pb_Avatar.Name = "pb_Avatar";
-            this.pb_Avatar.Size = new System.Drawing.Size(143, 142);
-            this.pb_Avatar.TabIndex = 0;
-            this.pb_Avatar.TabStop = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(157, 115);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 17;
             // 
             // frm_EditStaff
             // 
@@ -306,10 +320,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Avatar)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +344,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_Local;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -339,5 +353,6 @@
         private System.Windows.Forms.Button btn_Commit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pb_Avatar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

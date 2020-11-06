@@ -69,6 +69,12 @@
     <Compile Include="DAL\DAL_KindOfGoods.cs" />
     <Compile Include="DAL\DAL_Account.cs" />
     <Compile Include="DAL\DAL_Staff.cs" />
+    <Compile Include="GUI\frm_EditGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_EditGoods.Designer.cs">
+      <DependentUpon>frm_EditGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_EditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frm_EditGoods.resx">
+      <DependentUpon>frm_EditGoods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_EditStaff.resx">
       <DependentUpon>frm_EditStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,10 +159,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\avatar.png" />
-    <Content Include="Images\BakeryManagement.mdf">
+    <Content Include="BakeryManagement.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\BakeryManagement_log.ldf">
+    <Content Include="BakeryManagement_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BakeryManagement.mdf</DependentUpon>
     </Content>

@@ -34,6 +34,7 @@
             this.gv_Material = new System.Windows.Forms.DataGridView();
             this.cb_boxKindOfMaterial = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Material)).BeginInit();
@@ -41,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_AddMaterial);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cb_boxKindOfMaterial);
@@ -53,7 +55,7 @@
             // btn_AddMaterial
             // 
             this.btn_AddMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddMaterial.Location = new System.Drawing.Point(660, 340);
+            this.btn_AddMaterial.Location = new System.Drawing.Point(198, 340);
             this.btn_AddMaterial.Name = "btn_AddMaterial";
             this.btn_AddMaterial.Size = new System.Drawing.Size(127, 33);
             this.btn_AddMaterial.TabIndex = 6;
@@ -94,6 +96,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Loại Nguyên Liệu:";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(24, 340);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 33);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frm_MaterialManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,5 +129,6 @@
         private System.Windows.Forms.DataGridView gv_Material;
         private System.Windows.Forms.ComboBox cb_boxKindOfMaterial;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
