@@ -6,3 +6,9 @@ Member: Hoàng Võ Như Đức - 232 112 0865 - email: duchoangvo97@gmail.com
 		Tạo mới database với tên BakeryManagement, kết nối.
 		Mở và chạy file recovery_DB.sql.
 		Sửa lại chuỗi kết nối ở DAL_Access.
+		//
+		Đức: DAL Bill
+			frm_EditGoods
+			frm_Bill
+			frm_Report
+		Nam làm, commit lên master.

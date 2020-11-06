@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb_boxKindOfMaterial = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddMaterial = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gv_Material = new System.Windows.Forms.DataGridView();
+            this.cb_boxKindOfMaterial = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Material)).BeginInit();
@@ -50,23 +50,15 @@
             this.panel1.Size = new System.Drawing.Size(824, 392);
             this.panel1.TabIndex = 0;
             // 
-            // label2
+            // btn_AddMaterial
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Loại Nguyên Liệu:";
-            // 
-            // cb_boxKindOfMaterial
-            // 
-            this.cb_boxKindOfMaterial.FormattingEnabled = true;
-            this.cb_boxKindOfMaterial.Location = new System.Drawing.Point(238, 21);
-            this.cb_boxKindOfMaterial.Name = "cb_boxKindOfMaterial";
-            this.cb_boxKindOfMaterial.Size = new System.Drawing.Size(359, 21);
-            this.cb_boxKindOfMaterial.TabIndex = 4;
+            this.btn_AddMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddMaterial.Location = new System.Drawing.Point(660, 340);
+            this.btn_AddMaterial.Name = "btn_AddMaterial";
+            this.btn_AddMaterial.Size = new System.Drawing.Size(127, 33);
+            this.btn_AddMaterial.TabIndex = 6;
+            this.btn_AddMaterial.Text = "Nhập hàng";
+            this.btn_AddMaterial.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -76,22 +68,31 @@
             this.panel2.Size = new System.Drawing.Size(763, 261);
             this.panel2.TabIndex = 5;
             // 
-            // btn_AddMaterial
-            // 
-            this.btn_AddMaterial.Location = new System.Drawing.Point(694, 340);
-            this.btn_AddMaterial.Name = "btn_AddMaterial";
-            this.btn_AddMaterial.Size = new System.Drawing.Size(93, 33);
-            this.btn_AddMaterial.TabIndex = 6;
-            this.btn_AddMaterial.Text = "Nhập hàng";
-            this.btn_AddMaterial.UseVisualStyleBackColor = true;
-            // 
             // gv_Material
             // 
             this.gv_Material.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gv_Material.Location = new System.Drawing.Point(0, 4);
+            this.gv_Material.Location = new System.Drawing.Point(0, 0);
             this.gv_Material.Name = "gv_Material";
-            this.gv_Material.Size = new System.Drawing.Size(760, 257);
+            this.gv_Material.Size = new System.Drawing.Size(760, 261);
             this.gv_Material.TabIndex = 0;
+            // 
+            // cb_boxKindOfMaterial
+            // 
+            this.cb_boxKindOfMaterial.FormattingEnabled = true;
+            this.cb_boxKindOfMaterial.Location = new System.Drawing.Point(238, 21);
+            this.cb_boxKindOfMaterial.Name = "cb_boxKindOfMaterial";
+            this.cb_boxKindOfMaterial.Size = new System.Drawing.Size(359, 21);
+            this.cb_boxKindOfMaterial.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 24);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Loại Nguyên Liệu:";
             // 
             // frm_MaterialManagement
             // 

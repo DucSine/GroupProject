@@ -93,6 +93,12 @@
     <Compile Include="GUI\frm_MaterialManagement.Designer.cs">
       <DependentUpon>frm_MaterialManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frm_ProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_ProductManagement.Designer.cs">
+      <DependentUpon>frm_ProductManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_StaffManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_MaterialManagement.resx">
       <DependentUpon>frm_MaterialManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_ProductManagement.resx">
+      <DependentUpon>frm_ProductManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_StaffManagement.resx">
       <DependentUpon>frm_StaffManagement.cs</DependentUpon>

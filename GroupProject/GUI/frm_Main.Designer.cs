@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lb_Message = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cb_boxProducts = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cb_boxProducts = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb_Message = new System.Windows.Forms.ListBox();
             this.quanrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khoNguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +46,8 @@
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,32 +61,15 @@
             this.panel1.Size = new System.Drawing.Size(980, 530);
             this.panel1.TabIndex = 13;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lb_Message);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 530);
-            this.panel2.TabIndex = 0;
-            // 
-            // lb_Message
-            // 
-            this.lb_Message.FormattingEnabled = true;
-            this.lb_Message.Location = new System.Drawing.Point(4, 83);
-            this.lb_Message.Name = "lb_Message";
-            this.lb_Message.Size = new System.Drawing.Size(193, 446);
-            this.lb_Message.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Thông Báo";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(435, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Menu";
             // 
             // panel3
             // 
@@ -98,15 +81,20 @@
             this.panel3.Size = new System.Drawing.Size(766, 439);
             this.panel3.TabIndex = 1;
             // 
-            // label2
+            // panel4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(435, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Sản Phẩm";
+            this.panel4.Location = new System.Drawing.Point(24, 68);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(721, 349);
+            this.panel4.TabIndex = 5;
+            // 
+            // cb_boxProducts
+            // 
+            this.cb_boxProducts.FormattingEnabled = true;
+            this.cb_boxProducts.Location = new System.Drawing.Point(113, 23);
+            this.cb_boxProducts.Name = "cb_boxProducts";
+            this.cb_boxProducts.Size = new System.Drawing.Size(121, 21);
+            this.cb_boxProducts.TabIndex = 4;
             // 
             // label3
             // 
@@ -118,20 +106,32 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Lọc theo:";
             // 
-            // cb_boxProducts
+            // panel2
             // 
-            this.cb_boxProducts.FormattingEnabled = true;
-            this.cb_boxProducts.Location = new System.Drawing.Point(113, 23);
-            this.cb_boxProducts.Name = "cb_boxProducts";
-            this.cb_boxProducts.Size = new System.Drawing.Size(121, 21);
-            this.cb_boxProducts.TabIndex = 4;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lb_Message);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 530);
+            this.panel2.TabIndex = 0;
             // 
-            // panel4
+            // label1
             // 
-            this.panel4.Location = new System.Drawing.Point(24, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(721, 349);
-            this.panel4.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Thông Báo";
+            // 
+            // lb_Message
+            // 
+            this.lb_Message.FormattingEnabled = true;
+            this.lb_Message.Location = new System.Drawing.Point(4, 83);
+            this.lb_Message.Name = "lb_Message";
+            this.lb_Message.Size = new System.Drawing.Size(193, 446);
+            this.lb_Message.TabIndex = 0;
             // 
             // quanrToolStripMenuItem
             // 
@@ -204,10 +204,10 @@
             this.Text = "frm_Main";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

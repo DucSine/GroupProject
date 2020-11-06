@@ -47,6 +47,7 @@
             // 
             // btn_Search
             // 
+            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.Location = new System.Drawing.Point(559, 28);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(138, 26);
@@ -72,6 +73,7 @@
             // 
             // btn_AddStaff
             // 
+            this.btn_AddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddStaff.Location = new System.Drawing.Point(683, 407);
             this.btn_AddStaff.Name = "btn_AddStaff";
             this.btn_AddStaff.Size = new System.Drawing.Size(87, 31);
