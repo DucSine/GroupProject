@@ -30,20 +30,20 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_boxKindOfMaterial = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_AddMaterial = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gv_Material = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Material)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_AddMaterial);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cb_boxKindOfMaterial);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
@@ -60,17 +60,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Loại Nguyên Liệu:";
             // 
-            // comboBox1
+            // cb_boxKindOfMaterial
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(238, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(359, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cb_boxKindOfMaterial.FormattingEnabled = true;
+            this.cb_boxKindOfMaterial.Location = new System.Drawing.Point(238, 21);
+            this.cb_boxKindOfMaterial.Name = "cb_boxKindOfMaterial";
+            this.cb_boxKindOfMaterial.Size = new System.Drawing.Size(359, 21);
+            this.cb_boxKindOfMaterial.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.gv_Material);
             this.panel2.Location = new System.Drawing.Point(24, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(763, 261);
@@ -85,13 +85,13 @@
             this.btn_AddMaterial.Text = "Nhập hàng";
             this.btn_AddMaterial.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gv_Material
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 257);
-            this.dataGridView1.TabIndex = 0;
+            this.gv_Material.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_Material.Location = new System.Drawing.Point(0, 4);
+            this.gv_Material.Name = "gv_Material";
+            this.gv_Material.Size = new System.Drawing.Size(760, 257);
+            this.gv_Material.TabIndex = 0;
             // 
             // frm_MaterialManagement
             // 
@@ -104,7 +104,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Material)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,8 +114,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_AddMaterial;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView gv_Material;
+        private System.Windows.Forms.ComboBox cb_boxKindOfMaterial;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_Message = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_boxProducts = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.quanrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khoNguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,19 +64,19 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.lb_Message);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 530);
             this.panel2.TabIndex = 0;
             // 
-            // listBox1
+            // lb_Message
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(4, 83);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(193, 446);
-            this.listBox1.TabIndex = 0;
+            this.lb_Message.FormattingEnabled = true;
+            this.lb_Message.Location = new System.Drawing.Point(4, 83);
+            this.lb_Message.Name = "lb_Message";
+            this.lb_Message.Size = new System.Drawing.Size(193, 446);
+            this.lb_Message.TabIndex = 0;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cb_boxProducts);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(206, 83);
             this.panel3.Name = "panel3";
@@ -118,13 +118,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Lọc theo:";
             // 
-            // comboBox1
+            // cb_boxProducts
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cb_boxProducts.FormattingEnabled = true;
+            this.cb_boxProducts.Location = new System.Drawing.Point(113, 23);
+            this.cb_boxProducts.Name = "cb_boxProducts";
+            this.cb_boxProducts.Size = new System.Drawing.Size(121, 21);
+            this.cb_boxProducts.TabIndex = 4;
             // 
             // panel4
             // 
@@ -220,11 +220,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_boxProducts;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lb_Message;
         private System.Windows.Forms.ToolStripMenuItem quanrToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem khoNguyênLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sảnPhẩmToolStripMenuItem;
