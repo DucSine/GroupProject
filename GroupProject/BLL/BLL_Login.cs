@@ -11,15 +11,15 @@ using GroupProject.GUI;
 namespace GroupProject.BLL
 {
     
-    class BLL_Login :Form
+    class BLL_Login
     {
-        frm_Login log;
-        DAL_Account acc = new DAL_Account();
+        frm_Login f_Login;
+        DAL_Account account = new DAL_Account();
         int cout = 0;
 
-        public BLL_Login(GUI.frm_Login l)
+        public BLL_Login(GUI.frm_Login _f_Login)
         {
-            log = l;
+            f_Login = _f_Login;
         }
         
         public void Btn_Click(object sender, EventArgs e)
@@ -29,11 +29,11 @@ namespace GroupProject.BLL
             switch (btn.Name)
             {
                 case "btn_Login":
-                    if (acc.CheckLogin(log.txt_Username.Text, log.txt_Password.Text))
+                    if (account.CheckLogin(f_Login.txt_Username.Text, f_Login.txt_Password.Text))
                     {
                         MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         new frm_Main().Show();
-                        log.Visible = false;
+                        f_Login.Visible = false;
                     }
                     else
                     {

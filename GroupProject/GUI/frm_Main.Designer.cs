@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cb_boxProducts = new System.Windows.Forms.ComboBox();
+            this.cb_boxKOProducts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lb_Message = new System.Windows.Forms.ListBox();
+            this.listbox_Message = new System.Windows.Forms.ListBox();
             this.quanrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khoNguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +74,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.cb_boxProducts);
+            this.panel3.Controls.Add(this.cb_boxKOProducts);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(206, 83);
             this.panel3.Name = "panel3";
@@ -88,13 +88,13 @@
             this.panel4.Size = new System.Drawing.Size(721, 349);
             this.panel4.TabIndex = 5;
             // 
-            // cb_boxProducts
+            // cb_boxKOProducts
             // 
-            this.cb_boxProducts.FormattingEnabled = true;
-            this.cb_boxProducts.Location = new System.Drawing.Point(113, 23);
-            this.cb_boxProducts.Name = "cb_boxProducts";
-            this.cb_boxProducts.Size = new System.Drawing.Size(121, 21);
-            this.cb_boxProducts.TabIndex = 4;
+            this.cb_boxKOProducts.FormattingEnabled = true;
+            this.cb_boxKOProducts.Location = new System.Drawing.Point(113, 23);
+            this.cb_boxKOProducts.Name = "cb_boxKOProducts";
+            this.cb_boxKOProducts.Size = new System.Drawing.Size(121, 21);
+            this.cb_boxKOProducts.TabIndex = 4;
             // 
             // label3
             // 
@@ -109,7 +109,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.lb_Message);
+            this.panel2.Controls.Add(this.listbox_Message);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 530);
@@ -125,13 +125,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Thông Báo";
             // 
-            // lb_Message
+            // listbox_Message
             // 
-            this.lb_Message.FormattingEnabled = true;
-            this.lb_Message.Location = new System.Drawing.Point(4, 83);
-            this.lb_Message.Name = "lb_Message";
-            this.lb_Message.Size = new System.Drawing.Size(193, 446);
-            this.lb_Message.TabIndex = 0;
+            this.listbox_Message.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listbox_Message.FormattingEnabled = true;
+            this.listbox_Message.ItemHeight = 16;
+            this.listbox_Message.Location = new System.Drawing.Point(4, 83);
+            this.listbox_Message.Name = "listbox_Message";
+            this.listbox_Message.Size = new System.Drawing.Size(193, 436);
+            this.listbox_Message.TabIndex = 0;
             // 
             // quanrToolStripMenuItem
             // 
@@ -220,11 +222,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cb_boxProducts;
+        public System.Windows.Forms.ComboBox cb_boxKOProducts;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lb_Message;
+        public System.Windows.Forms.ListBox listbox_Message;
         private System.Windows.Forms.ToolStripMenuItem quanrToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem khoNguyênLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sảnPhẩmToolStripMenuItem;

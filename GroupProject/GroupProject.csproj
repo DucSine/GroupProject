@@ -62,12 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_Login.cs" />
+    <Compile Include="BLL\BLL_Main.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
     <Compile Include="DAL\DAL_Bill.cs" />
     <Compile Include="DAL\DAL_Goods.cs" />
     <Compile Include="DAL\DAL_GeneralAccess.cs" />
     <Compile Include="DAL\DAL_KindOfGoods.cs" />
     <Compile Include="DAL\DAL_Account.cs" />
+    <Compile Include="DAL\DAL_Message_Main.cs" />
     <Compile Include="DAL\DAL_Staff.cs" />
     <Compile Include="GUI\frm_EditGoods.cs">
       <SubType>Form</SubType>

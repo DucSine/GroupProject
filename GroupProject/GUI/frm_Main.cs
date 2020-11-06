@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GroupProject.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,10 @@ namespace GroupProject.GUI
     {
         public frm_Main()
         {
+            BLL_Main bll_Main = new BLL_Main(this);
             InitializeComponent();
+            this.Load += new EventHandler(bll_Main.Form_Load);
+            this.FormClosing += new FormClosingEventHandler(bll_Main.Form_Closing);
         }
     }
 }
