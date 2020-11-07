@@ -30,15 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dt_NgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pb_Avatar = new System.Windows.Forms.PictureBox();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Commit = new System.Windows.Forms.Button();
-            this.cb_Local = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comb_ViTri = new System.Windows.Forms.ComboBox();
+            this.txt_Luong = new System.Windows.Forms.TextBox();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_HoTen = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,11 +51,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txt_TenAnh = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Avatar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,15 +69,17 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.txt_TenAnh);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.dt_NgaySinh);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.btn_Cancel);
             this.panel2.Controls.Add(this.btn_Commit);
-            this.panel2.Controls.Add(this.cb_Local);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.comb_ViTri);
+            this.panel2.Controls.Add(this.txt_Luong);
+            this.panel2.Controls.Add(this.txt_SDT);
+            this.panel2.Controls.Add(this.txt_DiaChi);
+            this.panel2.Controls.Add(this.txt_HoTen);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -93,21 +94,21 @@
             this.panel2.Size = new System.Drawing.Size(640, 519);
             this.panel2.TabIndex = 1;
             // 
+            // dt_NgaySinh
+            // 
+            this.dt_NgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dt_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_NgaySinh.Location = new System.Drawing.Point(157, 115);
+            this.dt_NgaySinh.Name = "dt_NgaySinh";
+            this.dt_NgaySinh.Size = new System.Drawing.Size(200, 22);
+            this.dt_NgaySinh.TabIndex = 17;
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pb_Avatar);
-            this.panel3.Location = new System.Drawing.Point(460, 30);
+            this.panel3.Location = new System.Drawing.Point(456, 125);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(143, 142);
             this.panel3.TabIndex = 16;
-            // 
-            // pb_Avatar
-            // 
-            this.pb_Avatar.Location = new System.Drawing.Point(0, 0);
-            this.pb_Avatar.Name = "pb_Avatar";
-            this.pb_Avatar.Size = new System.Drawing.Size(143, 142);
-            this.pb_Avatar.TabIndex = 0;
-            this.pb_Avatar.TabStop = false;
             // 
             // btn_Cancel
             // 
@@ -129,49 +130,49 @@
             this.btn_Commit.Text = "Xác nhận";
             this.btn_Commit.UseVisualStyleBackColor = true;
             // 
-            // cb_Local
+            // comb_ViTri
             // 
-            this.cb_Local.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_Local.FormattingEnabled = true;
-            this.cb_Local.Items.AddRange(new object[] {
+            this.comb_ViTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comb_ViTri.FormattingEnabled = true;
+            this.comb_ViTri.Items.AddRange(new object[] {
             "Nhân viên bán hàng",
             "Nhân viên quản lý"});
-            this.cb_Local.Location = new System.Drawing.Point(157, 340);
-            this.cb_Local.Name = "cb_Local";
-            this.cb_Local.Size = new System.Drawing.Size(196, 24);
-            this.cb_Local.TabIndex = 13;
+            this.comb_ViTri.Location = new System.Drawing.Point(157, 340);
+            this.comb_ViTri.Name = "comb_ViTri";
+            this.comb_ViTri.Size = new System.Drawing.Size(196, 24);
+            this.comb_ViTri.TabIndex = 13;
             // 
-            // textBox4
+            // txt_Luong
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(157, 388);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 22);
-            this.textBox4.TabIndex = 12;
+            this.txt_Luong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Luong.Location = new System.Drawing.Point(157, 388);
+            this.txt_Luong.Name = "txt_Luong";
+            this.txt_Luong.Size = new System.Drawing.Size(196, 22);
+            this.txt_Luong.TabIndex = 12;
             // 
-            // textBox3
+            // txt_SDT
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(157, 288);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 22);
-            this.textBox3.TabIndex = 11;
+            this.txt_SDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SDT.Location = new System.Drawing.Point(157, 288);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(196, 22);
+            this.txt_SDT.TabIndex = 11;
             // 
-            // textBox2
+            // txt_DiaChi
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(157, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 22);
-            this.textBox2.TabIndex = 10;
+            this.txt_DiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaChi.Location = new System.Drawing.Point(157, 231);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(196, 22);
+            this.txt_DiaChi.TabIndex = 10;
             // 
-            // textBox1
+            // txt_HoTen
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 22);
-            this.textBox1.TabIndex = 9;
+            this.txt_HoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HoTen.Location = new System.Drawing.Point(157, 71);
+            this.txt_HoTen.Name = "txt_HoTen";
+            this.txt_HoTen.Size = new System.Drawing.Size(196, 22);
+            this.txt_HoTen.TabIndex = 9;
             // 
             // label9
             // 
@@ -297,14 +298,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin nhân viên";
             // 
-            // dateTimePicker1
+            // txt_TenAnh
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 115);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 17;
+            this.txt_TenAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenAnh.Location = new System.Drawing.Point(471, 65);
+            this.txt_TenAnh.Name = "txt_TenAnh";
+            this.txt_TenAnh.Size = new System.Drawing.Size(137, 22);
+            this.txt_TenAnh.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(378, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Ảnh:";
             // 
             // frm_EditStaff
             // 
@@ -320,8 +330,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Avatar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -334,25 +342,26 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbt_female;
-        private System.Windows.Forms.RadioButton rbt_male;
+        public System.Windows.Forms.RadioButton rbt_female;
+        public System.Windows.Forms.RadioButton rbt_male;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lb_uID_st_ID;
+        public System.Windows.Forms.Label lb_uID_st_ID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cb_Local;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox comb_ViTri;
+        public System.Windows.Forms.TextBox txt_Luong;
+        public System.Windows.Forms.TextBox txt_SDT;
+        public System.Windows.Forms.TextBox txt_DiaChi;
+        public System.Windows.Forms.TextBox txt_HoTen;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Commit;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pb_Avatar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DateTimePicker dt_NgaySinh;
+        public System.Windows.Forms.TextBox txt_TenAnh;
+        private System.Windows.Forms.Label label5;
     }
 }

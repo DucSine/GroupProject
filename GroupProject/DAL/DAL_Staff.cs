@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace GroupProject.DAL
 {
@@ -25,7 +24,7 @@ namespace GroupProject.DAL
             return dataTable;
         }
 
-        public int AddStaff(string st_id, string st_name, string st_image,bool st_sex , string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
+        public int AddStaff(string st_id, string st_name, string st_image, bool st_sex, string st_bDay, string st_phone, string st_adress, string st_local, float st_salary)
         {
             using (SqlConnection conn = access.GetConnection())
             {
@@ -75,7 +74,7 @@ namespace GroupProject.DAL
             return row;
         }
 
-        public bool DeleteStaff (string st_id)
+        public bool DeleteStaff(string st_id)
         {
             using (SqlConnection conn = access.GetConnection())
             {

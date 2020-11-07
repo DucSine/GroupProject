@@ -117,7 +117,7 @@
         private System.Windows.Forms.ComboBox cb_boxKindOfProduct;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView gv_Product;
+        public System.Windows.Forms.DataGridView gv_Product;
         private System.Windows.Forms.Button btn_AddProduct;
     }
 }

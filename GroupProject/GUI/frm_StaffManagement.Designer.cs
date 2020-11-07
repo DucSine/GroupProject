@@ -104,7 +104,7 @@
         private System.Windows.Forms.TextBox txt_SearchStaff;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView gv_Staff;
+        public System.Windows.Forms.DataGridView gv_Staff;
         private System.Windows.Forms.Button btn_AddStaff;
     }
 }

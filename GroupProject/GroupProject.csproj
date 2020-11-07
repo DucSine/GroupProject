@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Goods.cs" />
     <Compile Include="BLL\BLL_Login.cs" />
     <Compile Include="BLL\BLL_Main.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
