@@ -22,13 +22,13 @@ CREATE TABLE [dbo].[Staff] (
     PRIMARY KEY CLUSTERED ([st_ID] ASC)
 );
 CREATE TABLE [dbo].[KindOfGoods] (
-    [kog_ID]   NVARCHAR (15) NOT NULL,
+    [kog_ID]   NVARCHAR (50) NOT NULL,
     [kog_Name] NVARCHAR (30) NOT NULL,
     PRIMARY KEY CLUSTERED ([kog_ID] ASC)
 );
 CREATE TABLE [dbo].[Goods] (
-    [g_ID]         NVARCHAR (15) NOT NULL,
-    [kog_ID]       NVARCHAR (15) NOT NULL,
+    [g_ID]         NVARCHAR (50) NOT NULL,
+    [kog_ID]       NVARCHAR (50) NOT NULL,
     [g_Name]       NVARCHAR (30) NOT NULL,
     [g_Image]      NVARCHAR (50) NULL,
     [g_Caption]    NVARCHAR (20) NULL,
@@ -47,7 +47,7 @@ CREATE TABLE [dbo].[Bill] (
 );
 CREATE TABLE [dbo].[BillDetail] (
     [b_ID]        NVARCHAR (50) NOT NULL,
-    [g_ID]        NVARCHAR (15) NOT NULL,
+    [g_ID]        NVARCHAR (50) NOT NULL,
     [bd_Amount]   INT           NOT NULL,
     [bd_Discount] FLOAT (53)    NOT NULL,
     CONSTRAINT [pk1] PRIMARY KEY CLUSTERED ([b_ID] ASC, [g_ID] ASC),
@@ -133,7 +133,7 @@ end
 
 GO
 create proc spAddKindOfGoods
-@kog_ID   NVARCHAR (15),
+@kog_ID   NVARCHAR (50),
 @kog_Name NVARCHAR (30)
 as
 begin
@@ -143,7 +143,7 @@ end
 
 GO
 create proc spUpdateKindOfGoods
-@kog_ID   NVARCHAR (15),
+@kog_ID   NVARCHAR (50),
 @kog_Name NVARCHAR (30)
 as
 begin 
@@ -154,7 +154,7 @@ end
 
 GO
 create proc spDeleteKindOfGoods
-@kog_ID   NVARCHAR (15)
+@kog_ID   NVARCHAR (50)
 as
 begin 
     Delete from Goods
@@ -173,7 +173,7 @@ end
 GO
 GO
 create proc spAddGoods
-@g_ID         NVARCHAR (15),
+@g_ID         NVARCHAR (50),
 @kog_ID       NVARCHAR (15),
 @g_Name       NVARCHAR (30),
 @g_Image      NVARCHAR (50),
@@ -191,8 +191,8 @@ end
 
 GO
 create proc spUpdateGoods
-@g_ID         NVARCHAR (15),
-@kog_ID       NVARCHAR (15),
+@g_ID         NVARCHAR (50),
+@kog_ID       NVARCHAR (50),
 @g_Name       NVARCHAR (30),
 @g_Image      NVARCHAR (50),
 @g_Caption    NVARCHAR (20),
@@ -218,7 +218,7 @@ end
 
 GO
 create proc spDeleteGoods
-@g_ID         NVARCHAR (15)
+@g_ID         NVARCHAR (50)
 as
 begin 
     delete from Goods

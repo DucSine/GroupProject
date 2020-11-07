@@ -33,24 +33,7 @@ namespace GroupProject.DAL
             return dataTable;
         }
 
-        public DataTable LoadBillDetail(string b_id)
-        {
-            dataTable = new DataTable();
-            using(SqlConnection conn = access.GetConnection())
-            {
-                access.OpenConnection(conn);
-                cmd = new SqlCommand("spGetBillDetail", conn)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.Add(new SqlParameter("@b_ID", b_id));
-                reader = cmd.ExecuteReader();
-                if (reader != null)
-                    dataTable.Load(reader);
-                access.CloseConnection(conn);
-            }
-            return dataTable;
-        }
+       
 
         //thêm, sửa, xóa liên quan đến transaction
 
