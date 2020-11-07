@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gv_Goods = new System.Windows.Forms.DataGridView();
             this.cb_boxKOProducts = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,6 +48,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Goods)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -83,10 +86,19 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.gv_Goods);
             this.panel4.Location = new System.Drawing.Point(24, 68);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(721, 349);
             this.panel4.TabIndex = 5;
+            // 
+            // gv_Goods
+            // 
+            this.gv_Goods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_Goods.Location = new System.Drawing.Point(0, 3);
+            this.gv_Goods.Name = "gv_Goods";
+            this.gv_Goods.Size = new System.Drawing.Size(718, 346);
+            this.gv_Goods.TabIndex = 0;
             // 
             // cb_boxKOProducts
             // 
@@ -208,6 +220,8 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gv_Goods)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -235,5 +249,6 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.DataGridView gv_Goods;
     }
 }

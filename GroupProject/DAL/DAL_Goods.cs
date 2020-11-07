@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,6 +19,14 @@ namespace GroupProject.DAL
         bool check;
 
         public DataTable LoadGoods()
+        {
+            dataTable = new DataTable();
+            new SqlDataAdapter("spGetGoods", access.GetConnection()).Fill(dataTable);
+
+            return dataTable;
+        }
+        // edit
+        public DataTable LoadGoods(string kog_ID)
         {
             dataTable = new DataTable();
             new SqlDataAdapter("spGetGoods", access.GetConnection()).Fill(dataTable);
