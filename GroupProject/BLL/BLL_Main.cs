@@ -23,19 +23,12 @@ namespace GroupProject.BLL
         public void Form_Load(object sender, EventArgs e)
         {
             ArrayList message_List = new System.Collections.ArrayList();
-            Dictionary<string, string> kog_list = new Dictionary<string, string>();
-            kog_list.Add("all", "Tất cả");
            // list message hien thi thong baos
             f_Main.listbox_Message.DataSource = message_List;
             f_Main.cb_boxKOProducts.DataSource = dal_KindOfGoods.LoadKindOfGoods("goods");
             f_Main.cb_boxKOProducts.DisplayMember = "kog_Name";
             f_Main.cb_boxKOProducts.ValueMember = "kog_ID";
             f_Main.gv_Goods.DataSource = dal_Goods.LoadGoods("B001");
-
-
-            // hien thi san pham
-
-
 
         }
 
