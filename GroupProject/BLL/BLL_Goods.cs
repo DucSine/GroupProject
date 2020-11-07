@@ -21,7 +21,7 @@ namespace GroupProject.BLL
 
         public void LoadGoods()
         {
-            product.gv_Product.DataSource = dalgoods.LoadGoods();
+            //product.gv_Product.DataSource = dalgoods.LoadGoods(;
         }
 
        
