@@ -24,6 +24,81 @@ namespace GroupProject.GUI
 
         }
 
-        
+        private void chỉnhSửaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_EditStaff"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_EditStaff"].Activate();
+        }
+
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_StaffManagement"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_StaffManagement"].Activate();
+        }
+
+        private void chỉnhSửaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_EditGoods"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_EditGoods"].Activate();
+        }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_MaterialManagement"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_MaterialManagement"].Activate();
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_ProductManagement"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_ProductManagement"].Activate();
+        }
+
+        private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_BillImport"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_BillImport"].Activate();
+        }
+
+        private void hóaĐơnXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_BILL"] == null)
+            {
+                frm_EditStaff frm = new frm_EditStaff();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else Application.OpenForms["frm_BILL"].Activate();
+        }
     }
 }

@@ -73,6 +73,18 @@
     <Compile Include="DAL\DAL_Account.cs" />
     <Compile Include="DAL\DAL_Message_Main.cs" />
     <Compile Include="DAL\DAL_Staff.cs" />
+    <Compile Include="GUI\frm_BILL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_BILL.Designer.cs">
+      <DependentUpon>frm_BILL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_BillImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_BillImport.Designer.cs">
+      <DependentUpon>frm_BillImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frm_EditGoods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\frm_BILL.resx">
+      <DependentUpon>frm_BILL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_BillImport.resx">
+      <DependentUpon>frm_BillImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_EditGoods.resx">
       <DependentUpon>frm_EditGoods.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_Main.aa-DJ.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>

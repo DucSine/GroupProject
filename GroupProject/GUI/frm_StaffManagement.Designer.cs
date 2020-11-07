@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gv_Staff = new System.Windows.Forms.DataGridView();
             this.btn_AddStaff = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Staff)).BeginInit();
             this.SuspendLayout();
@@ -81,17 +82,29 @@
             this.btn_AddStaff.Text = "Thêm";
             this.btn_AddStaff.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(55, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tên ";
+            // 
             // frm_StaffManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_AddStaff);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txt_SearchStaff);
             this.Name = "frm_StaffManagement";
-            this.Text = "frm_StaffManagement";
+            this.Text = "Staff Management";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gv_Staff)).EndInit();
             this.ResumeLayout(false);
@@ -106,5 +119,6 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DataGridView gv_Staff;
         private System.Windows.Forms.Button btn_AddStaff;
+        private System.Windows.Forms.Label label1;
     }
 }

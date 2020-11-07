@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_TenAnh = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dt_NgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_TenAnh = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,6 +93,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(640, 519);
             this.panel2.TabIndex = 1;
+            // 
+            // txt_TenAnh
+            // 
+            this.txt_TenAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenAnh.Location = new System.Drawing.Point(471, 65);
+            this.txt_TenAnh.Name = "txt_TenAnh";
+            this.txt_TenAnh.Size = new System.Drawing.Size(137, 22);
+            this.txt_TenAnh.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(378, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Ảnh:";
             // 
             // dt_NgaySinh
             // 
@@ -298,24 +316,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin nhân viên";
             // 
-            // txt_TenAnh
-            // 
-            this.txt_TenAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenAnh.Location = new System.Drawing.Point(471, 65);
-            this.txt_TenAnh.Name = "txt_TenAnh";
-            this.txt_TenAnh.Size = new System.Drawing.Size(137, 22);
-            this.txt_TenAnh.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(378, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 16);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Ảnh:";
-            // 
             // frm_EditStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,7 +325,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_EditStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_EditStaff";
+            this.Text = "Edit Staff";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

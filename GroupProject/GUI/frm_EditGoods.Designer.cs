@@ -342,7 +342,7 @@
             this.ClientSize = new System.Drawing.Size(684, 661);
             this.Controls.Add(this.panel1);
             this.Name = "frm_EditGoods";
-            this.Text = "frm_EditGoods";
+            this.Text = "Edit Goods";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

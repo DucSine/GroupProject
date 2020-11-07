@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_boxKindOfProduct = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_AddProduct = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gv_Product = new System.Windows.Forms.DataGridView();
+            this.btn_AddProduct = new System.Windows.Forms.Button();
+            this.cb_boxKindOfProduct = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Product)).BeginInit();
@@ -49,6 +49,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(824, 392);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gv_Product);
+            this.panel2.Location = new System.Drawing.Point(40, 69);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(748, 254);
+            this.panel2.TabIndex = 8;
+            // 
+            // gv_Product
+            // 
+            this.gv_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gv_Product.Location = new System.Drawing.Point(0, 0);
+            this.gv_Product.Name = "gv_Product";
+            this.gv_Product.Size = new System.Drawing.Size(748, 254);
+            this.gv_Product.TabIndex = 0;
+            // 
+            // btn_AddProduct
+            // 
+            this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddProduct.Location = new System.Drawing.Point(614, 339);
+            this.btn_AddProduct.Name = "btn_AddProduct";
+            this.btn_AddProduct.Size = new System.Drawing.Size(174, 33);
+            this.btn_AddProduct.TabIndex = 7;
+            this.btn_AddProduct.Text = "Thêm bánh mới";
+            this.btn_AddProduct.UseVisualStyleBackColor = true;
             // 
             // cb_boxKindOfProduct
             // 
@@ -69,40 +95,15 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Loại Bánh:";
             // 
-            // btn_AddProduct
-            // 
-            this.btn_AddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddProduct.Location = new System.Drawing.Point(614, 339);
-            this.btn_AddProduct.Name = "btn_AddProduct";
-            this.btn_AddProduct.Size = new System.Drawing.Size(174, 33);
-            this.btn_AddProduct.TabIndex = 7;
-            this.btn_AddProduct.Text = "Thêm bánh mới";
-            this.btn_AddProduct.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gv_Product);
-            this.panel2.Location = new System.Drawing.Point(40, 69);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(748, 254);
-            this.panel2.TabIndex = 8;
-            // 
-            // gv_Product
-            // 
-            this.gv_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gv_Product.Location = new System.Drawing.Point(0, 0);
-            this.gv_Product.Name = "gv_Product";
-            this.gv_Product.Size = new System.Drawing.Size(748, 254);
-            this.gv_Product.TabIndex = 0;
-            // 
             // frm_ProductManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(849, 417);
             this.Controls.Add(this.panel1);
             this.Name = "frm_ProductManagement";
-            this.Text = "frm_ProductManagement";
+            this.Text = "Product Management";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
