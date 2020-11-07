@@ -126,9 +126,17 @@ end
 
 GO
 create proc spGetKindOfGoods
+@type       NVARCHAR (50)
 as
 begin
-	select * from KindOfGoods
+	if(@type = 'material')
+	begin
+		select * from KindOfGoods
+		except
+		select * from KindOfGoods where kog_ID like '%B%'
+	end
+	else
+		select * from KindOfGoods where kog_ID like '%B%'
 end
 
 GO
@@ -165,16 +173,17 @@ begin
 end
 
 GO
-create proc spGetGoods
+create proc spGetGoods 
+@kog_ID       NVARCHAR (50)
 as
 begin
-	select * from Goods
+	select * from Goods where kog_ID = @kog_ID
 end
 GO
 GO
 create proc spAddGoods
 @g_ID         NVARCHAR (50),
-@kog_ID       NVARCHAR (15),
+@kog_ID       NVARCHAR (50),
 @g_Name       NVARCHAR (30),
 @g_Image      NVARCHAR (50),
 @g_Caption    NVARCHAR (20),

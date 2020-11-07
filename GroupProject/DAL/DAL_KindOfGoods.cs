@@ -17,10 +17,26 @@ namespace GroupProject.DAL
         int row;
         bool check;
 
-        public DataTable LoadKindOfGoods()
+        public DataTable LoadKindOfGoods(string type)
         {
+            /*
+             type = material - nguyen lieu
+             type = goods -  san pham
+             */
             dataTable = new DataTable();
-            new SqlDataAdapter("spGetKindOfGoods", access.GetConnection()).Fill(dataTable);
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spGetKindOfGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@type", type));
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                    dataTable.Load(reader);
+                access.CloseConnection(conn);
+            }
 
             return dataTable;
         }

@@ -20,7 +20,10 @@ namespace GroupProject.GUI
             this.Load += new EventHandler(bll_Main.Form_Load);
             this.FormClosing += new FormClosingEventHandler(bll_Main.Form_Closing);
             gv_Goods.CellClick += new DataGridViewCellEventHandler(bll_Main.gv_Goods_CellClick);
+            cb_boxKOProducts.SelectedIndexChanged += new EventHandler(bll_Main.cb_boxKOProducts_SelectedIndexChanged);
 
         }
+
+        
     }
 }

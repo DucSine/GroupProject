@@ -18,19 +18,23 @@ namespace GroupProject.DAL
         int row;
         bool check;
 
-        public DataTable LoadGoods()
-        {
-            dataTable = new DataTable();
-            new SqlDataAdapter("spGetGoods", access.GetConnection()).Fill(dataTable);
-
-            return dataTable;
-        }
-        // edit
         public DataTable LoadGoods(string kog_ID)
         {
             dataTable = new DataTable();
-            new SqlDataAdapter("spGetGoods", access.GetConnection()).Fill(dataTable);
-
+            using (SqlConnection conn = access.GetConnection())
+            {
+                access.OpenConnection(conn);
+                cmd = new SqlCommand("spGetGoods", conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@kog_ID", kog_ID));
+                reader = cmd.ExecuteReader();
+                if (reader != null)
+                    dataTable.Load(reader);
+                access.CloseConnection(conn);
+            }
+           
             return dataTable;
         }
 
